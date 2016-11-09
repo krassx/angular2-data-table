@@ -1,9 +1,10 @@
-import { EventEmitter, KeyValueDiffers } from '@angular/core';
+import { EventEmitter, QueryList, KeyValueDiffers } from '@angular/core';
+import { DraggableDirective } from './draggable.directive';
 export declare class OrderableDirective {
     reorder: EventEmitter<any>;
-    private draggables;
-    private positions;
-    private differ;
+    draggables: QueryList<DraggableDirective>;
+    positions: any;
+    differ: any;
     constructor(differs: KeyValueDiffers);
     ngAfterContentInit(): void;
     ngOnDestroy(): void;

@@ -1,4 +1,5 @@
 import { EventEmitter, ElementRef, Renderer } from '@angular/core';
+import { RowHeightCache } from '../../utils';
 import { SelectionType } from '../../types';
 import { ScrollerComponent } from './scroller.component';
 export declare class DataTableBodyComponent {
@@ -29,17 +30,17 @@ export declare class DataTableBodyComponent {
     detailToggle: EventEmitter<any>;
     scroller: ScrollerComponent;
     readonly selectEnabled: boolean;
-    private rowHeightsCache;
-    private temp;
-    private offsetY;
-    private indexes;
-    private columnGroupWidths;
-    private _rows;
-    private _bodyHeight;
-    private _columns;
-    private _rowCount;
-    private _offset;
-    private _pageSize;
+    rowHeightsCache: RowHeightCache;
+    temp: any[];
+    offsetY: number;
+    indexes: any;
+    columnGroupWidths: any;
+    _rows: any[];
+    _bodyHeight: any;
+    _columns: any[];
+    _rowCount: number;
+    _offset: number;
+    _pageSize: number;
     /**
      * Property that would calculate the height of scroll bar
      * based on the row heights cache for virtual scroll. Other scenarios
@@ -104,4 +105,5 @@ export declare class DataTableBodyComponent {
      */
     toggleAllRows(expanded: boolean): void;
     recalcLayout(): void;
+    trackByRowIndex(index: number, item: any): any;
 }

@@ -233,7 +233,7 @@ class _View_DataTableHeaderComponent0 extends import3.AppView<import0.DataTableH
     this._OrderableDirective_1_3.detectChangesInInputProps(this,this._el_1,throwOnChange);
     const currVal_3_0_0:any = this.context.columnsByPin;
     this._NgFor_3_6.check_ngForOf(currVal_3_0_0,throwOnChange,false);
-    const currVal_3_0_1:any = ((this.context.colGroup == (null as any))? (null as any): this.context.colGroup.type);
+    const currVal_3_0_1:any = this.context.trackByColGroup;
     this._NgFor_3_6.check_ngForTrackBy(currVal_3_0_1,throwOnChange,false);
     this._NgFor_3_6.detectChangesInInputProps(this,this._anchor_3,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);
@@ -314,7 +314,7 @@ class _View_DataTableHeaderComponent1 extends import3.AppView<any> {
     this._NgStyle_0_3.detectChangesInInputProps(this,this._el_0,throwOnChange);
     const currVal_2_0_0:any = this.context.$implicit.columns;
     this._NgFor_2_6.check_ngForOf(currVal_2_0_0,throwOnChange,false);
-    const currVal_2_0_1:any = ((this.parent.context.column == (null as any))? (null as any): this.parent.context.column.$$id);
+    const currVal_2_0_1:any = this.parent.context.trackByColumn;
     this._NgFor_2_6.check_ngForTrackBy(currVal_2_0_1,throwOnChange,false);
     this._NgFor_2_6.detectChangesInInputProps(this,this._anchor_2,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);

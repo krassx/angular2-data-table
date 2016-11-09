@@ -9,11 +9,11 @@ export declare class DataTableBodyRowComponent {
     readonly isEvenRow: boolean;
     readonly isOddRow: boolean;
     activate: EventEmitter<any>;
-    private element;
-    private columnGroupWidths;
-    private columnsByPin;
-    private _columns;
-    private _innerWidth;
+    element: any;
+    columnGroupWidths: any;
+    columnsByPin: any;
+    _columns: any[];
+    _innerWidth: number;
     constructor(element: ElementRef, renderer: Renderer);
     stylesByGroup(group: any): {
         width: string;
@@ -21,4 +21,6 @@ export declare class DataTableBodyRowComponent {
     onActivate(event: any, index: any): void;
     onKeyDown(event: any): void;
     recalculateColumns(val?: any[]): void;
+    trackByColGroup(index: number, item: any): any;
+    trackByColumn(index: number, item: any): any;
 }

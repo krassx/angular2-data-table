@@ -1,4 +1,5 @@
 import { ElementRef, EventEmitter } from '@angular/core';
+import { Subscription } from 'rxjs/Rx';
 /**
  * Draggable Directive for Angular2
  *
@@ -15,8 +16,8 @@ export declare class DraggableDirective {
     dragging: EventEmitter<any>;
     dragEnd: EventEmitter<any>;
     element: HTMLElement;
-    private isDragging;
-    private subscription;
+    isDragging: boolean;
+    subscription: Subscription;
     constructor(element: ElementRef);
     ngOnDestroy(): void;
     onMouseup(event: any): void;

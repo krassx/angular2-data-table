@@ -1,5 +1,6 @@
 import { ElementRef, EventEmitter, OnInit, QueryList, AfterViewInit, Renderer, TemplateRef } from '@angular/core';
 import { ColumnMode, SortType, SelectionType } from '../types';
+import { DataTableBodyComponent } from './body';
 import { DataTableColumnDirective } from './column.directive';
 import { DatatableRowDetailDirective } from './row-detail.directive';
 export declare class DatatableComponent implements OnInit, AfterViewInit {
@@ -43,16 +44,16 @@ export declare class DatatableComponent implements OnInit, AfterViewInit {
     columnTemplates: QueryList<DataTableColumnDirective>;
     rowDetailTemplateChild: DatatableRowDetailDirective;
     offsetX: number;
-    private bodyComponent;
-    private element;
-    private innerWidth;
-    private pageSize;
-    private bodyHeight;
-    private rowCount;
-    private _rows;
-    private _columns;
-    private _columnTemplates;
-    private _rowDetailTemplateChild;
+    bodyComponent: DataTableBodyComponent;
+    element: HTMLElement;
+    innerWidth: number;
+    pageSize: number;
+    bodyHeight: number;
+    rowCount: number;
+    _rows: any[];
+    _columns: any[];
+    _columnTemplates: QueryList<DataTableColumnDirective>;
+    _rowDetailTemplateChild: DatatableRowDetailDirective;
     constructor(renderer: Renderer, element: ElementRef);
     ngOnInit(): void;
     ngAfterViewInit(): void;

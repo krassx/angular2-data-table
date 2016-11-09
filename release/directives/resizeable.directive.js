@@ -18,7 +18,7 @@ var ResizeableDirective = (function () {
             this.subscription.unsubscribe();
         }
     };
-    ResizeableDirective.prototype.onMouseup = function () {
+    ResizeableDirective.prototype.onMouseup = function (event) {
         this.resizing = false;
         if (this.subscription && !this.subscription.closed) {
             this.subscription.unsubscribe();

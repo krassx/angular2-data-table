@@ -1,5 +1,5 @@
 import { EventEmitter } from '@angular/core';
-import { SortType } from '../../types';
+import { SortDirection, SortType } from '../../types';
 export declare class DataTableHeaderCellComponent {
     sortType: SortType;
     column: any;
@@ -9,12 +9,12 @@ export declare class DataTableHeaderCellComponent {
     sorts: any[];
     sort: EventEmitter<any>;
     readonly columnCssClasses: any;
-    private readonly name;
-    private readonly minWidth;
-    private readonly maxWidth;
-    private readonly width;
-    private sortDir;
-    private _sorts;
+    readonly name: string;
+    readonly minWidth: number;
+    readonly maxWidth: number;
+    readonly width: number;
+    sortDir: SortDirection;
+    _sorts: any[];
     sortClasses(dir: any): any;
     calcSortDir(sorts: any): any;
     onSort(): void;

@@ -516,7 +516,7 @@ class _View_DataTableBodyComponent2 extends import3.AppView<any> {
     if (this._ScrollerComponent_0_4.detectChangesInInputProps(this,this._el_0,throwOnChange)) { this._appEl_0.componentView.markAsCheckOnce(); }
     const currVal_2_0_0:any = this.parent.context.temp;
     this._NgFor_2_6.check_ngForOf(currVal_2_0_0,throwOnChange,false);
-    const currVal_2_0_1:any = ((this.parent.context.row == (null as any))? (null as any): this.parent.context.row.$$index);
+    const currVal_2_0_1:any = this.parent.context.trackByRowIndex;
     this._NgFor_2_6.check_ngForTrackBy(currVal_2_0_1,throwOnChange,false);
     this._NgFor_2_6.detectChangesInInputProps(this,this._anchor_2,throwOnChange);
     this.detectContentChildrenChanges(throwOnChange);

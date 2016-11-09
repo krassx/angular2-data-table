@@ -13,7 +13,7 @@ export declare class RowHeightCache {
      * range queries and updates.  Currently the tree is initialized to the base row
      * height instead of the detail row height.
      */
-    private treeArray;
+    treeArray: number[];
     /**
      * Clear the Tree array.
      */
@@ -64,5 +64,5 @@ export declare class RowHeightCache {
      * @param sum - The scrollY position.
      * @returns {number} - Index representing the first row visible in the viewport
      */
-    private calcRowIndex(sum);
+    calcRowIndex(sum: number): number;
 }

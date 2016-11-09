@@ -9,7 +9,7 @@ export declare class DataTableSelectionComponent {
     selectCheck: any;
     activate: EventEmitter<any>;
     select: EventEmitter<any>;
-    private prevIndex;
+    prevIndex: number;
     selectRow(event: any, index: any, row: any): void;
     onActivate(model: any, index: any): void;
     onKeyboardFocus(model: any): void;

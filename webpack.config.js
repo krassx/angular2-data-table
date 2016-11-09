@@ -1,3 +1,5 @@
+'use strict';
+
 var path = require('path');
 var webpack = require('webpack');
 
@@ -9,7 +11,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-let ngtools = require('@ngtools/webpack');
+var ngtools = require('@ngtools/webpack');
 
 var ENV = process.env.NODE_ENV;
 var IS_PRODUCTION = ENV === 'production';
@@ -22,13 +24,14 @@ function root(args) {
 }
 
 var banner =
-`/**
- * angular2-data-table v${VERSION} (https://github.com/swimlane/angular2-data-table)
- * Copyright 2016
- * Licensed under MIT
- */`;
+' /**\n' +
+' * angular2-data-table v${VERSION} (https://github.com/swimlane/angular2-data-table)\n' +
+' * Copyright 2016\n' +
+' * Licensed under MIT\n' +
+' */';
 
-function webpackConfig(options = {}) {
+function webpackConfig(options) {
+  options = options || {};
 
   var IS_HMR = options.HMR;
 

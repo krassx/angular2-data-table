@@ -13,11 +13,11 @@ export declare class DataTableHeaderComponent {
     sort: EventEmitter<any>;
     reorder: EventEmitter<any>;
     resize: EventEmitter<any>;
-    private columnsByPin;
-    private columnGroupWidths;
-    private _columns;
-    private _headerHeight;
-    private readonly headerWidth;
+    columnsByPin: any;
+    columnGroupWidths: any;
+    _columns: any[];
+    _headerHeight: string;
+    readonly headerWidth: string;
     constructor(element: ElementRef, renderer: Renderer);
     onColumnResized(width: any, column: any): void;
     onColumnReordered({prevIndex, newIndex, column}: {
@@ -34,4 +34,6 @@ export declare class DataTableHeaderComponent {
     stylesByGroup(group: any): {
         width: string;
     };
+    trackByColGroup(index: number, item: any): any;
+    trackByColumn(index: number, item: any): any;
 }
