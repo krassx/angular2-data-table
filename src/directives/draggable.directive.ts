@@ -21,8 +21,8 @@ export class DraggableDirective {
   @Output() dragEnd: EventEmitter<any> = new EventEmitter();
 
   element: HTMLElement;
-  private isDragging: boolean = false;
-  private subscription: Subscription;
+  isDragging: boolean = false;
+  subscription: Subscription;
 
   constructor(element: ElementRef) {
     this.element = element.nativeElement;

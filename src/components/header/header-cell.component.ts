@@ -69,27 +69,27 @@ export class DataTableHeaderCellComponent {
   }
 
   @HostBinding('attr.title')
-  private get name(): string {
+  get name(): string {
     return this.column.name || this.column.prop;
   }
 
   @HostBinding('style.minWidth.px')
-  private get minWidth(): number {
+  get minWidth(): number {
     return this.column.minWidth;
   }
 
   @HostBinding('style.maxWidth.px')
-  private get maxWidth(): number {
+  get maxWidth(): number {
     return this.column.maxWidth;
   }
 
   @HostBinding('style.width.px')
-  private get width(): number {
+  get width(): number {
     return this.column.width;
   }
 
-  private sortDir: SortDirection;
-  private _sorts: any[];
+  sortDir: SortDirection;
+  _sorts: any[];
 
   sortClasses(dir): any {
     let result = {};

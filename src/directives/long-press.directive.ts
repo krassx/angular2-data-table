@@ -16,11 +16,11 @@ export class LongPressDirective {
   @Output() longPressing: EventEmitter<any> = new EventEmitter();
   @Output() longPressEnd: EventEmitter<any> = new EventEmitter();
 
-  private pressing: boolean;
-  private isLongPressing: boolean;
-  private timeout: any;
-  private mouseX: number = 0;
-  private mouseY: number = 0;
+  pressing: boolean;
+  isLongPressing: boolean;
+  timeout: any;
+  mouseX: number = 0;
+  mouseY: number = 0;
 
   @HostBinding('class.press')
   get press() { return this.pressing; }

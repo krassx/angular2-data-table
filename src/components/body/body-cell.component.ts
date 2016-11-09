@@ -78,9 +78,9 @@ export class DataTableBodyCellComponent {
     return userPipe ? userPipe.transform(prop) : prop;
   }
 
-  private sortDir: SortDirection;
-  private element: any;
-  private _sorts: any[];
+  sortDir: SortDirection;
+  element: any;
+  _sorts: any[];
 
   constructor(element: ElementRef, renderer: Renderer) {
     this.element = element.nativeElement;

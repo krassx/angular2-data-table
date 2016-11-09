@@ -12,11 +12,11 @@ import {
   selector: 'datatable-body-row',
   template: `
     <div
-      *ngFor="let colGroup of columnsByPin; let i = index; trackBy: $colGroup?.type"
+      *ngFor="let colGroup of columnsByPin; let i = index; trackBy: trackByColGroup"
       class="datatable-row-{{colGroup.type}} datatable-row-group"
       [ngStyle]="stylesByGroup(colGroup.type)">
       <datatable-body-cell
-        *ngFor="let column of colGroup.columns; let ii = index; trackBy: column?.$$id"
+        *ngFor="let column of colGroup.columns; let ii = index; trackBy: trackByColumn"
         tabindex="-1"
         [row]="row"
         [column]="column"
@@ -68,11 +68,11 @@ export class DataTableBodyRowComponent {
 
   @Output() activate: EventEmitter<any> = new EventEmitter();
 
-  private element: any;
-  private columnGroupWidths: any;
-  private columnsByPin: any;
-  private _columns: any[];
-  private _innerWidth: number;
+  element: any;
+  columnGroupWidths: any;
+  columnsByPin: any;
+  _columns: any[];
+  _innerWidth: number;
 
   constructor(element: ElementRef, renderer: Renderer) {
     this.element = element.nativeElement;
@@ -135,6 +135,14 @@ export class DataTableBodyRowComponent {
     const colsByPin = columnsByPin(val);
     this.columnsByPin = columnsByPinArr(val);
     this.columnGroupWidths = columnGroupWidths(colsByPin, val);
+  }
+
+  trackByColGroup(index: number, item: any): any {
+    return item && item.type;
+  }
+
+  trackByColumn(index: number, item: any): any {
+    return item && item.$$id;
   }
 
 }

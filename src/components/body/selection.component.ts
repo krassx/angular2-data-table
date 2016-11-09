@@ -21,7 +21,7 @@ export class DataTableSelectionComponent {
   @Output() activate: EventEmitter<any> = new EventEmitter();
   @Output() select: EventEmitter<any> = new EventEmitter();
 
-  private prevIndex: number;
+  prevIndex: number;
 
   selectRow(event, index, row): void {
     if (!this.selectEnabled) return;

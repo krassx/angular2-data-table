@@ -15,9 +15,9 @@ export class ResizeableDirective {
 
   @Output() resize: EventEmitter<any> = new EventEmitter();
 
-  private element: HTMLElement;
-  private subscription: Subscription;
-  private resizing: boolean = false;
+  element: HTMLElement;
+  subscription: Subscription;
+  resizing: boolean = false;
 
   constructor(element: ElementRef) {
     this.element = element.nativeElement;

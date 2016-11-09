@@ -11,10 +11,10 @@ export class OrderableDirective {
   @Output() reorder: EventEmitter<any> = new EventEmitter();
 
   @ContentChildren(DraggableDirective, { descendants: true })
-  private draggables: QueryList<DraggableDirective>;
+  draggables: QueryList<DraggableDirective>;
 
-  private positions: any;
-  private differ: any;
+  positions: any;
+  differ: any;
 
   constructor(differs: KeyValueDiffers) {
     this.differ = differs.find({}).create(null);

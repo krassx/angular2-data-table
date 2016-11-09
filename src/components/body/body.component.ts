@@ -30,7 +30,7 @@ import { ScrollerComponent } from './scroller.component';
         [scrollWidth]="columnGroupWidths.total"
         (scroll)="onBodyScroll($event)">
         <datatable-row-wrapper 
-          *ngFor="let row of temp; let i = index; trackBy: row?.$$index"
+          *ngFor="let row of temp; let i = index; trackBy: trackByRowIndex"
           [ngStyle]="getRowsStyles(row)"
           [rowDetailTemplate]="rowDetailTemplate"
           [detailRowHeight]="detailRowHeight"
@@ -158,18 +158,18 @@ export class DataTableBodyComponent {
     return !!this.selectionType;
   }
 
-  private rowHeightsCache: RowHeightCache = new RowHeightCache();
-  private temp: any[] = [];
-  private offsetY: number = 0;
-  private indexes: any = {};
-  private columnGroupWidths: any;
+  rowHeightsCache: RowHeightCache = new RowHeightCache();
+  temp: any[] = [];
+  offsetY: number = 0;
+  indexes: any = {};
+  columnGroupWidths: any;
 
-  private _rows: any[];
-  private _bodyHeight: any;
-  private _columns: any[];
-  private _rowCount: number;
-  private _offset: number;
-  private _pageSize: number;
+  _rows: any[];
+  _bodyHeight: any;
+  _columns: any[];
+  _rowCount: number;
+  _offset: number;
+  _pageSize: number;
 
   /**
    * Property that would calculate the height of scroll bar
@@ -413,6 +413,10 @@ export class DataTableBodyComponent {
     this.refreshRowHeightCache();
     this.updateIndexes();
     this.updateRows();
+  }
+
+  trackByRowIndex(index: number, item: any): any {
+    return item && item.$$index;
   }
 
 }

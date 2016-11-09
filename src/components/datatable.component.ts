@@ -262,18 +262,18 @@ export class DatatableComponent implements OnInit, AfterViewInit {
   offsetX: number = 0;
 
   @ViewChild(DataTableBodyComponent)
-  private bodyComponent: DataTableBodyComponent;
+  bodyComponent: DataTableBodyComponent;
 
-  private element: HTMLElement;
-  private innerWidth: number;
-  private pageSize: number;
-  private bodyHeight: number;
-  private rowCount: number;
+  element: HTMLElement;
+  innerWidth: number;
+  pageSize: number;
+  bodyHeight: number;
+  rowCount: number;
 
-  private _rows: any[];
-  private _columns: any[];
-  private _columnTemplates: QueryList<DataTableColumnDirective>;
-  private _rowDetailTemplateChild: DatatableRowDetailDirective;
+  _rows: any[];
+  _columns: any[];
+  _columnTemplates: QueryList<DataTableColumnDirective>;
+  _rowDetailTemplateChild: DatatableRowDetailDirective;
 
   constructor(renderer: Renderer, element: ElementRef) {
     this.element = element.nativeElement;

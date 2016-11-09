@@ -23,12 +23,12 @@ export class ScrollerComponent implements OnInit, OnDestroy {
 
   @Output() scroll: EventEmitter<any> = new EventEmitter();
 
-  private scrollYPos: number = 0;
-  private scrollXPos: number = 0;
-  private prevScrollYPos: number = 0;
-  private prevScrollXPos: number = 0;
-  private element: any;
-  private parentElement: any;
+  scrollYPos: number = 0;
+  scrollXPos: number = 0;
+  prevScrollYPos: number = 0;
+  prevScrollXPos: number = 0;
+  element: any;
+  parentElement: any;
   
   constructor(element: ElementRef) {
     this.element = element.nativeElement;

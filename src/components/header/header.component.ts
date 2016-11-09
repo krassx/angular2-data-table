@@ -14,11 +14,11 @@ import { columnsByPin, columnGroupWidths, columnsByPinArr, translateXY } from '.
       [style.width.px]="columnGroupWidths.total"
       class="datatable-header-inner">
       <div
-        *ngFor="let colGroup of columnsByPin; trackBy: colGroup?.type"
+        *ngFor="let colGroup of columnsByPin; trackBy: trackByColGroup"
         [class]="'datatable-row-' + colGroup.type"
         [ngStyle]="stylesByGroup(colGroup.type)">
         <datatable-header-cell
-          *ngFor="let column of colGroup.columns; trackBy: column?.$$id"
+          *ngFor="let column of colGroup.columns; trackBy: trackByColumn"
           resizeable
           [resizeEnabled]="column.resizeable"
           (resize)="onColumnResized($event, column)"
@@ -81,13 +81,13 @@ export class DataTableHeaderComponent {
   @Output() reorder: EventEmitter<any> = new EventEmitter();
   @Output() resize: EventEmitter<any> = new EventEmitter();
 
-  private columnsByPin: any;
-  private columnGroupWidths: any;
-  private _columns: any[];
-  private _headerHeight: string;
+  columnsByPin: any;
+  columnGroupWidths: any;
+  _columns: any[];
+  _headerHeight: string;
 
   @HostBinding('style.width')
-  private get headerWidth(): string {
+  get headerWidth(): string {
     if(this.scrollbarH) {
       return this.innerWidth + 'px';
     }
@@ -172,6 +172,14 @@ export class DataTableHeaderComponent {
     }
 
     return styles;
+  }
+
+  trackByColGroup(index: number, item: any): any {
+    return item && item.type;
+  }
+
+  trackByColumn(index: number, item: any): any {
+    return item && item.$$id;
   }
 
 }

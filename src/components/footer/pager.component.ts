@@ -97,10 +97,10 @@ export class DataTablePagerComponent {
 
   @Output() change: EventEmitter<any> = new EventEmitter();
 
-  private _count: number;
-  private _page: number;
-  private _size: number;
-  private pages: any;
+  _count: number;
+  _page: number;
+  _size: number;
+  pages: any;
 
   constructor(element: ElementRef, renderer: Renderer) {
     renderer.setElementClass(element.nativeElement, 'datatable-pager', true);
