@@ -36,7 +36,7 @@ export class ResizeableDirective {
   }
 
   @HostListener('document:mouseup', ['$event'])
-  onMouseup() {
+  onMouseup(event) {
     this.resizing = false;
 
     if (this.subscription && !this.subscription.closed) {
