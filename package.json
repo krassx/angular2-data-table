@@ -3,6 +3,7 @@
   "version": "1.4.0",
   "description": "angular2-data-table is a Angular2 component for presenting large and complex data.",
   "main": "release/index.js",
+  "jsnext:main": "release/es6/index.js",
   "typings": "release/index.d.ts",
   "scripts": {
     "check": "npm-check --skip-unused",
@@ -24,7 +25,8 @@
     "watch": "webpack --display-error-details --watch",
     "start": "webpack-dev-server",
     "start:hmr": "webpack-dev-server --env.HMR",
-    "release": "npm-run-all -s clean:* release:css release:aot build:package release:replace release:minify",
+    "release": "npm-run-all -s clean:* release:css release:aot build:package release:replace release:minify release:es6",
+    "release:es6": "tsc -p tsconfig-es6.json",
     "release:ts": "tsc --outDir release",
     "release:aot": "ngc -p tsconfig-aot.json",
     "release:replace": "node tasks/replace.js",
